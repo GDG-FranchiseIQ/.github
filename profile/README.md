@@ -54,46 +54,11 @@ You open the mobile app, define your project and objective (concept, budget, pri
 
 ## System architecture
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                              FIELD (MOBILE)                                  │
-│  Camera frames + GPS ──► WebSocket: FRAME, AUDIO_IN, COMMAND                │
-│  ◄── SCORE_UPDATE, FINDING, TRANSCRIPT_TURN, AUDIO_OUT, SITE_*, ERROR         │
-└───────────────────────────────────┬─────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    franchiseiq-api (FastAPI on Cloud Run)                    │
-│  • SessionManager: WS lifecycle, audio buffer, site/session commands           │
-│  • OrchestratorService: agent fan-in / score / events out                     │
-│  • REST: projects, sessions, sites, query, export                             │
-└───────┬─────────────────────┬─────────────────────────────┬──────────────────┘
-        │                     │                             │
-        ▼                     ▼                             ▼
-┌───────────────┐   ┌─────────────────┐           ┌──────────────────┐
-│ Cloud         │   │ BigQuery         │           │ Vertex AI Gemini │
-│ Firestore     │   │ franchiseiq_nyc  │           │ (vision, text,   │
-│ projects,     │   │ + raw NYC tables │           │  STT-style,      │
-│ sessions,     │   │ spatial features │           │  ADK delegate)   │
-│ sites,        │   └─────────────────┘           └──────────────────┘
-│ findings,     │             │
-│ transcript    │             ▼
-└───────────────┘   ┌─────────────────┐
-        ▲           │ Optional:       │
-        │           │ BQ snapshot →   │
-        │           │ Firestore       │
-        │           │ neighborhood_   │
-        │           │ cache           │
-        │           │ (Scheduler)     │
-        │           └─────────────────┘
-        │
-        │  REST (Bearer / Firebase ID token)
-        ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    franchiseiq-webapp (Next.js dashboard)                      │
-│  Project detail, sites, findings, transcript, compare, project query          │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+<div align="center">
+
+![FranchiseIQ Live — system architecture](../assets/diagram-export-28-3-2026-12_54_51-PM.svg)
+
+</div>
 
 **End-to-end flow (simplified):**
 
