@@ -1,21 +1,5 @@
 # FranchiseIQ Live
 
-<div align="center">
-
-![FranchiseIQ Live — from outdated $50K site studies to real-time multimodal site intelligence on the street (vision, voice, GPS, BigQuery, Vertex AI, Cloud Run)](../assets/Gemini_Generated_Image_96tu2v96tu2v96tu.png)
-
-*At a glance: the old way (stale reports, delays, gut feel) vs. the new way — live scores, grounded NYC data, and agentic guidance while you walk the block.*
-
-### Presentation
-
-[![Open presentation — FranchiseIQ Live](https://img.shields.io/badge/Presentation-Open%20pitch%20deck-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://docs.google.com/presentation/d/REPLACE_WITH_YOUR_SLIDES_ID/edit?usp=sharing)
-
-*Click the tile above to open the demo deck. Replace `REPLACE_WITH_YOUR_SLIDES_ID` in this file (or use a published “Present” / Pitch.com / Canva link) so the button points to your real slides.*
-
-</div>
-
----
-
 **A Google Cloud–native, multimodal, agentic site intelligence system:** mobile camera, voice, and GPS fused in real time with NYC open data in BigQuery, orchestrated by Gemini-powered agents, persisted in Firestore, and served via Cloud Run—so operators get instant field-to-dashboard decisioning.
 
 ---
@@ -58,13 +42,6 @@ You open the mobile app, define your project and objective (concept, budget, pri
 
 ## System architecture
 
-System design diagram (source: [`franchiseiq-mobile/assets/system-architecture.svg`](../../franchiseiq-mobile/assets/system-architecture.svg)):
-
-![FranchiseIQ Live — system architecture](../../franchiseiq-mobile/assets/system-architecture.svg)
-
-<details>
-<summary>Text-only architecture sketch (fallback)</summary>
-
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                              FIELD (MOBILE)                                  │
@@ -105,8 +82,6 @@ System design diagram (source: [`franchiseiq-mobile/assets/system-architecture.s
 │  Project detail, sites, findings, transcript, compare, project query          │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
-
-</details>
 
 **End-to-end flow (simplified):**
 
