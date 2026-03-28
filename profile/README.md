@@ -1,5 +1,17 @@
 # FranchiseIQ Live
 
+<div align="center">
+
+![FranchiseIQ Live — multimodal site intelligence on the street](../assets/Gemini_Generated_Image_96tu2v96tu2v96tu.png)
+
+[![Open presentation — FranchiseIQ Live (Prezi)](https://img.shields.io/badge/Presentation-Open%20Prezi%20deck-2E71E5?style=for-the-badge&logo=googlechrome&logoColor=white)](https://prezi.com/view/RlQUNYUXpjvmtK99VqZb/)
+
+**Contributors:** Ram Parekh, Yatharth Mogra
+
+</div>
+
+---
+
 **A Google Cloud–native, multimodal, agentic site intelligence system:** mobile camera, voice, and GPS fused in real time with NYC open data in BigQuery, orchestrated by Gemini-powered agents, persisted in Firestore, and served via Cloud Run—so operators get instant field-to-dashboard decisioning.
 
 ---
